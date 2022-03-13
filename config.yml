@@ -95,21 +95,21 @@ option name SyzygyProbeDepth type spin : 100
 option name Syzygy50MoveRule type check : true
 option name SyzygyProbeLimit type spin : 7
 option name Use NNUE type check : true
-     go_commands:             # additional options to pass to the UCI go command
-       depth: 20               # Search depth ply only.
-#      movetime: 1         # Integer. Search exactly movetime milliseconds.
-#  xboard_options:            # arbitrary xboard options passed to the engine
-#    cores: "4"
-#    memory: "4096"
-#    egtpath:                 # dir containing egtb, relative to this project
+    go_commands:             # Additional options to pass to the UCI go command.
+      depth: 20              # Search depth ply only.
+#     movetime: 1000         # Integer. Search exactly movetime milliseconds.
+# xboard_options:            # Arbitrary XBoard options passed to the engine.
+#   cores: "4"
+#   memory: "4096"
+#   egtpath:                 # Directory containing egtb (endgame tablabases), relative to this project. For 'xboard' engines.
 #     gaviota: "Gaviota path"
 #     nalimov: "Nalimov Path"
 #     scorpio: "Scorpio Path"
 #     syzygy: "Syzygy Path"
-   silence_stderr: false      # some engines (yes you, leela) are very noisy
-# xboard_options:            # Arbitrary XBoard options passed to the engine.
-#   cores: "4"
-#   memory: "4096"
+#   go_commands:             # Additional options to pass to the XBoard go command.
+#     depth: 5               # Search depth ply only.
+#     Do note that the go commands 'movetime' and 'nodes' are invalid and may cause bad time management for XBoard engines.
+  silence_stderr: false      # Some engines (yes you, Leela) are very noisy.
 #   egtpath:                 # Directory containing egtb (endgame tablabases), relative to this project. For 'xboard' engines.
 #     gaviota: "Gaviota path"
 #     nalimov: "Nalimov Path"

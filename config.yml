@@ -96,8 +96,7 @@ option name Syzygy50MoveRule type check : true
 option name SyzygyProbeLimit type spin : 7
 option name Use NNUE type check : true
     go_commands:             # Additional options to pass to the UCI go command.
-      depth: 20              # Search depth ply only.
-#     movetime: 1000         # Integer. Search exactly movetime milliseconds.
+     depth: 20               # Search depth ply only.
 # xboard_options:            # Arbitrary XBoard options passed to the engine.
 #   cores: "4"
 #   memory: "4096"

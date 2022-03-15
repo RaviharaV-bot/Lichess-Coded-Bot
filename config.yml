@@ -83,8 +83,8 @@ engine:                      # Engine settings.
   homemade_options:
 #   Hash: 256  
   uci_options:               # Arbitrary UCI options passed to the engine.
-    Move Overhead: 200       # Increase if your bot flags games too often.
-    Threads: 3               # Max CPU threads the engine can use.
+    Move Overhead: 300       # Increase if your bot flags games too often.
+    Threads: 4               # Max CPU threads the engine can use.
     Hash: 128                # Max memory (in megabytes) the engine can allocate.
     Use NNUE: true           # allow bot to use neural networks
     SyzygyProbeDepth: 50

@@ -255,7 +255,7 @@ def play_game(li, game_id, control_queue, user_profile, config, challenge_queue,
 
     engine_cfg = config["engine"]
     ponder_cfg = correspondence_cfg if is_correspondence else engine_cfg
-    can_ponder = ponder_cfg.get("uci_ponder", true) or ponder_cfg.get("ponder", false)
+    can_ponder = ponder_cfg.get("uci_ponder", false) or ponder_cfg.get("ponder", false)
     move_overhead = config.get("move_overhead", 100)
     delay_seconds = config.get("rate_limiting_delay", 0)/400
     polyglot_cfg = engine_cfg.get("polyglot", {})

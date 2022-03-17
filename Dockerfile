@@ -26,7 +26,7 @@ RUN wget --no-check-certificate "https://abrok.eu/stockfish/builds/f3a2296e591d0
 RUN 7z e chess-engine.zip && rm chess-engine.zip && mv stockfish* chess-engine
 
 
-RUN wget --no-check-certificate "https://github.com/SriMethan/lic-bot-heroku/raw/main/engines/fsf" -O fsf
+RUN wget --no-check-certificate "https://github.com/Nimsilu/bots-un/raw/master/engines/fsf_linux" -O fsf
  
 COPY requirements.txt .
 RUN python3 -m pip install --no-cache-dir -r requirements.txt

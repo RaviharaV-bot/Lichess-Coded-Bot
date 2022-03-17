@@ -255,9 +255,9 @@ def play_game(li, game_id, control_queue, user_profile, config, challenge_queue,
 
     engine_cfg = config["engine"]
     ponder_cfg = correspondence_cfg if is_correspondence else engine_cfg
-    can_ponder = ponder_cfg.get("uci_ponder", False) or ponder_cfg.get("ponder", False)
-    move_overhead = config.get("move_overhead", 100)
-    delay_seconds = config.get("rate_limiting_delay", 0)/400
+    can_ponder = ponder_cfg.get("uci_ponder", True) or ponder_cfg.get("ponder", True)
+    move_overhead = config.get("move_overhead", 500)
+    delay_seconds = config.get("rate_limiting_delay", 0)/800
     polyglot_cfg = engine_cfg.get("polyglot", {})
     online_moves_cfg = engine_cfg.get("online_moves", {})
     draw_or_resign_cfg = engine_cfg.get("draw_or_resign") or {}
@@ -368,7 +368,7 @@ def choose_move_time(engine, board, search_time, ponder, draw_offered):
 
 def choose_first_move(engine, board, draw_offered):
     # need to hardcode first movetime (10000 ms) since Lichess has 30 sec limit.
-    search_time = 500
+    search_time = 10000
     logger.info(f"Searching for time {search_time}")
     return engine.first_search(board, search_time, draw_offered)
 

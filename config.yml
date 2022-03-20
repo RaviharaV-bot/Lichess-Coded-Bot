@@ -1,11 +1,12 @@
-token: "lip_LxOdszffnb7u1m35raeW"    # Lichess OAuth2 Token.
+
+token: "lip_BkSdYAf7dnPZtbXFPmlr"    # Lichess OAuth2 Token.
 url: "https://lichess.org/"  # Lichess base URL.
 
 engine:                      # Engine settings.
   dir: "./"          # Directory containing the engine. This can be an absolute path or one relative to lichess-bot/.
   name: "sf"        # Binary name of the engine to use.
   Atomic: "msf"  # Binary name of the engine for atomic variant to use.
-  Antichess: "msf"  # Binary name of the engine for antichess variant to use.
+  Antichess: "msf"   # Binary name of the engine for antichess variant to use.
   Crazyhouse: "fsf"  # Binary name of the engine for crazyhouse variant to use.
   Horde: "fsf"   # Binary name of the engine for horde variant to use.
   King of the Hill: "fsf"   # Binary name of the engine for koth variant to use.
@@ -30,16 +31,21 @@ engine:                      # Engine settings.
         - lichess_torombot_2022-03-04.bin
       atomic: # list of book file paths for variant atomic
         - atomic.bin
-      antichess:
+      antichess: # list of book file paths for variant antichess 
         - antichess.bin
-      horde:
+        - engines/antibest.bin
+      horde: # list of book file paths for variant horde
         - horde.bin
-      racingkings:
+      racingkings: # list of book file paths for variant racingkings 
         - racingKings.bin
-      3check:
+      3check: # list of book file paths for variant 3check
         - threeCheck.bin
-      kingofthehill:
-        - kingofthehill.bin 
+      kingofthehill: # list of book file paths for variant kingofthehill
+        - kingofthehill.bin
+      crazyhouse: #list of the book file paths for variant crazyhouse 
+        - engine/allplay.bin
+      chess960: #list of the book file paths for variant chess960
+        - Cerebellum3Merge.bin
 #     atomic:                # List of book file paths for variant atomic.
 #       - engines/atomicbook1.bin
 #       - engines/atomicbook2.bin
@@ -53,7 +59,7 @@ engine:                      # Engine settings.
     resign_score: -1000      # If the score is less than or equal to this value, the bot resigns (in cp).
     resign_for_egtb_minus_two: true # If true the bot will resign in positions where the online_egtb returns a wdl of -2.
     resign_moves: 3          # How many moves in a row the score has to be below the resign value.
-    offer_draw_enabled: true
+    offer_draw_enabled: false
     offer_draw_score: 0      # If the absolute value of the score is less than or equal to this value, the bot offers/accepts draw (in cp).
     offer_draw_for_egtb_zero: true # If true the bot will offer/accept draw in positions where the online_egtb returns a wdl of 0.
     offer_draw_moves: 5      # How many moves in a row the absolute value of the score has to be below the draw value.
@@ -62,19 +68,19 @@ engine:                      # Engine settings.
     chessdb_book:
       enabled: false
       min_time: 20
-      move_quality: "good"   # One of "all", "good", "best".
+      move_quality: "best"   # One of "all", "good", "best".
       min_depth: 20          # Only for move_quality: "best".
       contribute: true
     lichess_cloud_analysis:
       enabled: true
-      min_time: 120
+      min_time: 20
       move_quality: "best"   # One of "good", "best".
       max_score_difference: 50 # Only for move_quality: "good". The maximum score difference (in cp) between the best move and the other moves.
       min_depth: 50
       min_knodes: 500
     online_egtb:
       enabled: true
-      min_time: 120
+      min_time: 20
       max_pieces: 7
       source: "lichess"      # One of "lichess", "chessdb".
       move_quality: "best"   # One of "good", "best".
@@ -132,7 +138,7 @@ option name Use NNUE type check : true
 abort_time: 60               # Time to abort a game in seconds when there is no activity.
 fake_think_time: false       # Artificially slow down the bot to pretend like it's thinking.
 rate_limiting_delay: 0       # Time (in ms) to delay after sending a move to prevent "Too Many Requests" errors.
-#move_overhead: 50          # Increase if your bot flags games too often.
+#move_overhead: 5000          # Increase if your bot flags games too often.
 
 correspondence:
     move_time: 60            # Time in seconds to search in correspondence games.
@@ -145,7 +151,7 @@ challenge:                   # Incoming challenges.
   sort_by: "best"            # Possible values: "best" and "first".
   accept_bot: true          # Accepts challenges coming from other bots.
   only_bot: false            # Accept challenges by bots only.
-  max_increment: 180         # Maximum amount of increment to accept a challenge. The max is 180. Set to 0 for no increment.
+  max_increment: 3         # Maximum amount of increment to accept a challenge. The max is 180. Set to 0 for no increment.
   min_increment: 0           # Minimum amount of increment to accept a challenge.
   max_base: 315360000        # Maximum amount of base time to accept a challenge. The max is 315360000 (10 years).
   min_base: 0                # Minimum amount of base time to accept a challenge.
@@ -166,16 +172,12 @@ challenge:                   # Incoming challenges.
     - rapid
     - classical
 #   - correspondence
-  modes:                     # Game modes to accept.
-    - casual                 # Unrated games.
-    - rated                  # Rated games - must comment if the engine doesn't try to win.
-
-greeting:
+ modes:                     # game modes to accept
+    - casual                 # unrated games
+#    - rated                  # rated games - must comment if the engine doesn't try to wingreeting:
     # Optional substitution keywords (include curly braces):
     #   {opponent} to insert opponent's name
     #   {me} to insert bot's name
     # Any other words in curly braces will be removed.
-    hello: "Hi! I'm {me}. Good luck! Type !help for a list of commands I can respond to." # Message to send to chat at the start of a game
-    goodbye: "Good game!" # Message to send to chat at the end of a game
-
-# pgn_directory: "game_records" # A directory where PGN-format records of the bot's games are kept
+    hello: "Hello! I'm @{me} made by @Soloboy4. Type !help for a list of commands I can respond to." # Message to send to chat at the start of a game
+    goodbye: "That was a good game.Hope we meet soon!" # Message to send to chat at the end of a game

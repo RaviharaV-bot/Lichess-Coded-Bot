@@ -8,7 +8,7 @@ engine:                      # Engine settings.
   Antichess: "Anti-Fairy"  # Binary name of the engine for antichess variant to use.
   Crazyhouse: "Anti-Fairy"  # Binary name of the engine for crazyhouse variant to use.
   Horde: "Anti-Fairy"   # Binary name of the engine for horde variant to use.
-  King of the Hill: "Anti-Fairy   # Binary name of the engine for koth variant to use.
+  King of the Hill: "Anti-Fairy"   # Binary name of the engine for koth variant to use.
   Racing Kings: "Anti-Fairy"  # Binary name of the engine for racing kings variant to use.
   Three-check: "Anti-Fairy"   # Binary name of the engine for three check variant to use.
   working_dir: ""            # Directory where the chess engine will read and write files. If blank or missing, the current directory is used.
@@ -74,9 +74,9 @@ engine:                      # Engine settings.
   homemade_options:
 #   Hash: 256  
   uci_options:               # Arbitrary UCI options passed to the engine.
-    Move Overhead: 340                    # Increase if your bot flags games too often.
-    Threads: 5                            # Max CPU threads the engine can use.
-    Hash: 256                             # Max memory (in megabytes) the engine can allocate.
+    Move Overhead: 200                    # Increase if your bot flags games too often.
+    Threads: 3                            # Max CPU threads the engine can use.
+    Hash: 137                             # Max memory (in megabytes) the engine can allocate.
     MultiPV: 70
     Skill Level: 20
     UCI_Elo : 2850

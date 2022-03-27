@@ -29,4 +29,5 @@ RUN chmod +x chess-engine
 RUN chmod +x Anti-Fairy
 RUN chmod +x Atomic-Fairy
 
-CMD python3 run.py
+CMD python3 heroku_challenges.py
+

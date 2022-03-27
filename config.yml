@@ -1,11 +1,11 @@
-token: "lip_1MsgjrHZMpAYylrXfaAJ"         # Lichess OAuth2 Token.
+token: "lip_NKNakvuj64iXddImiScs"         # Lichess OAuth2 Token.
 
 engine:                                   # Engine settings.
   dir: "./engines"               # Directory containing the engine.
-  name: "stockfish"        # Binary name of the engine to use.
+  name: "chess-engine"        # Binary name of the engine to use.
   ponder: true                            # Think on opponent's time.
   polyglot:
-    enabled: true                         # Activate polyglot book.
+    enabled: false                         # Activate polyglot book.
     books:
       white: "lichess-book"                      # Name of the book to use as white.
       black: "govi"                         # Name of the book to use as black.

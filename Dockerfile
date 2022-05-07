@@ -1,6 +1,6 @@
 FROM debian:stable-slim
-MAINTAINER RAVIHARAV
-RUN echo RAVIHARAV
+MAINTAINER Utsa
+RUN echo Utsa
 COPY . .
 COPY requirements.txt .
 

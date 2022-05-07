@@ -179,5 +179,5 @@ challenge:                   # Incoming challenges.
     #   {opponent} to insert opponent's name
     #   {me} to insert bot's name
     # Any other words in curly braces will be removed.
-    hello: "Hello! I am @{me} made by @Soloboy4. Type !help for a list of commands I can respond to." # Message to send to chat at the start of a game
+    hello: "Hello! I'm @{me} made by @Soloboy4. Type !help for a list of commands I can respond to." # Message to send to chat at the start of a game
     goodbye: "That was a good game.Hope we meet soon!" # Message to send to chat at the end of a game

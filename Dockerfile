@@ -1,6 +1,6 @@
 FROM debian:stable-slim
-MAINTAINER Utsa
-RUN echo Utsa
+MAINTAINER Ut
+RUN echo Ut
 COPY . .
 COPY requirements.txt .
 
